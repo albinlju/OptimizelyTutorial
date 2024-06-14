@@ -1,0 +1,17 @@
+﻿@using OptimizelyTutorial.Features.Pages.Standard
+@model StandardPageViewModel
+
+<div class="max-w-screen-xl mx-auto px-5">
+    <div class="grid lg:grid-cols-2 pt-16 pb-8 md:pt-12 md:pb-24">
+        <div>
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">@Html.PropertyFor(x => x.Title)</h1>
+            <p class="text-lg mt-4 text-slate-600 max-w-xl">@Html.PropertyFor(x => x.Intro)</p>
+           
+        </div>
+       <div></div>
+    </div>
+    <div class="mb-10 max-w-2xl">
+        @Html.PropertyFor(x => x.Text)
+    </div>
+    @Html.PropertyFor(x => x.Blocks)
+</div>

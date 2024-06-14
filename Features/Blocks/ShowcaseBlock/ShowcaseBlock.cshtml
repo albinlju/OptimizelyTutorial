@@ -1,0 +1,6 @@
+﻿@using OptimizelyTutorial.Features.Blocks.Blocks.ShowcaseBlock
+@model ShowcaseBlock
+
+<h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">@Html.PropertyFor(x => x.Title)</h2>
+<p class="text-lg mt-4 text-slate-600">@Html.PropertyFor(x => x.Description)</p>
+@Html.PropertyFor(x => x.ShowcaseItems, new { CssClass = "grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16" })
