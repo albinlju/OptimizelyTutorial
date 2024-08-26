@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+	<language name="Swedish" id="sv">
+		<contenttypes>
+			<pagebase>
+				<properties>
+					<metatitle>
+						<caption>Meta titel</caption>
+						<help>Sidans meta titel</help>
+					</metatitle>
+					<metadescription>
+						<caption>Meta beskrivning</caption>
+						<help>Sidans meta beskrrivning</help>
+					</metadescription>
+					<title>
+						<caption>Titel</caption>
+						<help>Sidans titel</help>
+					</title>
+					<topimage>
+						<caption>Top bild</caption>
+						<help>Sidans top bild</help>
+					</topimage>
+					<intro>
+						<caption>Intro</caption>
+						<help>Sidans intro text</help>
+					</intro>
+				</properties>
+			</pagebase>
+		</contenttypes>
+	</language>
+	<language name="English" id="en">
+		<contenttypes>
+			<pageBase>
+				<metaTitle>
+					<name>Meta title</name>
+					<description>The page meta title</description>
+				</metaTitle>
+				<metadescription>
+					<name>Meta description</name>
+					<description>The page meta description</description>
+				</metadescription>
+				<title>
+					<caption>Titel</caption>
+					<help>the page titel</help>
+				</title>
+				<topimage>
+					<caption>Top image</caption>
+					<help>The page top image</help>
+				</topimage>
+				<intro>
+					<caption>Intro</caption>
+					<help>The page intro text</help>
+				</intro>
+			</pageBase>
+		</contenttypes>
+	</language>
+</languages>

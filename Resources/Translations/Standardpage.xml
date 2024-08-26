@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+	<language name="Swedish" id="sv">
+		<contenttypes>
+			<standard>
+				<properties>
+					<text>
+						<caption>Innehåll</caption>
+						<help>Sidans textinnehåll</help>
+					</text>
+					<blocks>
+						<caption>Block</caption>
+						<help>Sidans block</help>
+					</blocks>
+				</properties>
+			</standard>
+		</contenttypes>
+	</language>
+	<language name="English" id="en">
+		<contenttypes>
+			<startpage>
+				<properties>
+					<text>
+						<caption>Content</caption>
+						<help>The page textcontent</help>
+					</text>
+					<blocks>
+						<caption>Blocks</caption>
+						<help>The page blocks</help>
+					</blocks>
+				</properties>
+			</startpage>
+		</contenttypes>
+	</language>
+</languages>

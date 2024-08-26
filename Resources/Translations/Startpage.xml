@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+	<language name="Swedish" id="sv">
+		<contenttypes>
+			<startpage>
+				<properties>
+					<ctalink>
+						<caption>Cta länk</caption>
+						<help>Sidans call to action länk</help>
+					</ctalink>
+					<blocks>
+						<caption>Block</caption>
+						<help>Sidans block</help>
+					</blocks>
+				</properties>
+			</startpage>
+		</contenttypes>
+	</language>
+	<language name="English" id="en">
+		<contenttypes>
+			<startpage>
+				<properties>
+					<ctalink>
+						<caption>Cta link</caption>
+						<help>The page call to action link</help>
+					</ctalink>
+					<blocks>
+						<caption>Blocks</caption>
+						<help>The page blocks</help>
+					</blocks>
+				</properties>
+			</startpage>
+		</contenttypes>
+	</language>
+</languages>

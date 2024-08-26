@@ -1,10 +1,9 @@
 using EPiServer.Cms.Shell;
 using EPiServer.Cms.UI.AspNetIdentity;
+using EPiServer.Marketing.Testing.Web.Initializers;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.Extensions.DependencyInjection;
 using OptimizelyTutorial.Infrastructure.Display;
 
 namespace OptimizelyTutorial;
@@ -12,10 +11,12 @@ namespace OptimizelyTutorial;
 public class Startup
 {
     private readonly IWebHostEnvironment _webHostingEnvironment;
+    private readonly IConfiguration _configuration;
 
-    public Startup(IWebHostEnvironment webHostingEnvironment)
+    public Startup(IWebHostEnvironment webHostingEnvironment, IConfiguration configuration)
     {
         _webHostingEnvironment = webHostingEnvironment;
+        _configuration = configuration;
     }
 
     public void ConfigureServices(IServiceCollection services)
@@ -35,8 +36,12 @@ public class Startup
         services
             .AddCmsAspNetIdentity<ApplicationUser>()
             .AddCms()
-            .AddAdminUserRegistration()
-            .AddEmbeddedLocalization<Startup>();
+            .AddAdminUserRegistration();
+            
+        services.AddEmbeddedLocalization<Startup>(); 
+        services.AddABTesting(_configuration.GetConnectionString("EPiServerDB"));
+
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
