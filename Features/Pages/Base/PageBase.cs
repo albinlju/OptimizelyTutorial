@@ -22,6 +22,7 @@ public class PageBase : PageData
     public virtual string Title { get; set; }   
 
     [Display(GroupName = SystemTabNames.Content, Order = 2)]
+    [CultureSpecific]
     public virtual ContentReference? TopImage { get; set; }
 
     [CultureSpecific]
