@@ -11,7 +11,7 @@
             <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">@Html.PropertyFor(x => x.Title)</h1>
             <p class="text-lg mt-4 text-slate-600 max-w-xl">@Html.PropertyFor(x => x.Intro)</p>
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                <a href="@Model.CtaLink.Url" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent flex gap-1 items-center justify-center">@Model.CtaLink.Name</a>
+                <a @Html.EditAttributes(x => x.CtaLink) href="@Model.CtaLink.Url" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800  border-2 border-transparent flex gap-1 items-center justify-center">@Model.CtaLink.Name</a>
             </div>
         </div>
     </div>
