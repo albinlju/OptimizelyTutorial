@@ -1,0 +1,53 @@
+﻿@using OptimizelyTutorial.Features.Pages.Search
+@model SearchPageViewModel
+
+
+<div class="max-w-screen-xl mx-auto px-5">
+    <h1 class="text-5xl max-w-3xl m-auto text-center mt-20 lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">@Model.Title</h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-3xl m-auto mt-5 text-center mb-10">@Model.Intro</p>
+    <form id="search-form" class="max-w-md mx-auto mb-10">
+        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+        <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+            </div>
+            <input type="search" name="query" id="default-search" value="@Model.Query" class="block mb-5 w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 bg-gray-200 border-gray-400 placeholder-gray-800 focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." required />
+            <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-black hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+        </div>
+    </form>
+
+    @if (Model.SearchResults.Any())
+    {
+        foreach(var result in Model.SearchResults)
+        {
+            <div class="w-full bg-white border mb-5 border-gray-200 rounded-lg shadow bg-gray-100">
+                <div id="defaultTabContent">
+                    <div class=" p-4 bg-white rounded-lg md:p-8 bg-gray-100" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900">@result.Title</h2>
+                        <p class="mb-3 text-gray-500 dark:text-gray-400">@result.Intro</p>
+                        <a href="@Url.ContentUrl(result.ContentLink)" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
+                            Läs mer om @result.Title
+                            <svg class=" w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                        </a>
+                    </div>     
+                </div>
+            </div>
+
+        }
+    }
+</div>
+<script>
+    const searchInput = document.getElementById('default-search');
+    const searchForm = document.getElementById('search-form');
+
+    searchInput.addEventListener('input', function () {
+        if (searchInput.value.trim() === '') {
+            searchInput.value = ''; 
+            searchForm.submit(); 
+        }
+    });
+</script>
