@@ -32,6 +32,7 @@
         <div class="lg:flex items-center gap-4">
             <a href="#">Logga in</a>
             <a href="#" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-4 py-2 bg-black text-white hover:bg-gray-800  border-2 border-transparent">Registrera</a>
+            @await Component.InvokeAsync("LanguageSelector")
         </div>
     </div>
 </header>
