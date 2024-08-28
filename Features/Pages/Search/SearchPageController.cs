@@ -19,7 +19,6 @@ namespace OptimizelyTutorial.Features.Pages.Search
             var search = _client.Search<StandardPage>()
             .For(query)
             .WithAndAsDefaultOperator()
-
             .InField(x => x.Name)
             .InField(x => x.Title)
             .InField(x => x.Intro)

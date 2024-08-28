@@ -7,12 +7,19 @@ namespace OptimizelyTutorial.Features.Shared.ViewComponents.LanguageSelector
 {
     public class LanguageSelectorViewComponent(
         ILanguageBranchRepository _languageBranchRepository,
-        IPageRouteHelper _pageRouteHelper) : ViewComponent
+        IPageRouteHelper _pageRouteHelper,
+        IUrlResolver _urlResolver) : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync() => View(new LanguageSelectorViewModel {
-          Languages =  _languageBranchRepository.ListEnabled(),
-          PreferredLanguage = ContentLanguage.PreferredCulture.Name,
-          CurrentPageLink = _pageRouteHelper.PageLink
-        });
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var currentLanguage = _languageBranchRepository.ListEnabled().FirstOrDefault(x => x.LanguageID != ContentLanguage.PreferredCulture.Name);
+            
+            return View(new LanguageSelectorViewModel
+            {
+                CurrentLanguage = currentLanguage?.Name ?? "",
+                Url = _urlResolver.GetUrl(_pageRouteHelper.PageLink, currentLanguage.LanguageID),
+            });
+        }
     }
 }

@@ -37,6 +37,7 @@ public class Startup
             .AddCmsAspNetIdentity<ApplicationUser>()
             .AddCms()
             .AddFind()
+            .AddCmsTagHelpers()
             .AddAdminUserRegistration();
             
         services.AddEmbeddedLocalization<Startup>(); 
